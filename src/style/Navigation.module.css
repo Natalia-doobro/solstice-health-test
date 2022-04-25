@@ -1,0 +1,23 @@
+.navigation{
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3c3e47;
+}
+.link:not(:last-child){
+    margin-right: 70px;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
