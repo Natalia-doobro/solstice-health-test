@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import shortid from "shortid";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import classNames from 'classnames';
+import s from '../../style/Form.module.scss'
 
 
 class SignUp extends Component {
@@ -37,50 +39,66 @@ class SignUp extends Component {
         const { email, password, confirmPassword } = this.state;
 
         return (
-            <div>
-                <h2>Sign up</h2>
-                <p>Fill in the sign up form to get started</p>
+            <form onSubmit={this.handleSubmit} className={s.container}>
+                <h1 className={s.tytle}>Sign up</h1>
+                <p className={s.text}>Fill in the sign up form to get started</p>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor={this.emailInputId}>Email address</label>
+                <div className={s.containerInput}>
+                    <label htmlFor={this.emailInputId} className={s.label}>Email address</label>
                     <input
                         type="email"
                         name="email"
                         value={email}
                         placeholder="Email address"
                         id={this.emailInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
+                </div>
 
-                    <label htmlFor={this.passwordInputId}>Password</label>
+                <div className={classNames(s.containerInput, s.inputPassword)}>
+                    <label htmlFor={this.passwordInputId} className={s.label}>Password</label>
                     <input
                         type="password"
                         name="password"
                         value={password}
                         placeholder="Password"
                         id={this.passwordInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
-                    <button><BsEye/><BsEyeSlash/></button>
+                    <button className={s.btnHiddenPassword}>
+                        <AiOutlineEye className={s.iconPassword}/>
+                        {/* <AiOutlineEyeInvisible className={s.iconPassword}/> */}
+                    </button>
+                </div>
 
-                    <label htmlFor={this.confirmPasswordInputId}>Confirm password</label>
+                
+
+                <div className={s.containerInput}>
+                    <label htmlFor={this.confirmPasswordInputId} className={s.label}>Confirm password</label>
                     <input
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
                         placeholder="Confirm password"
                         id={this.confirmPasswordInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
+                </div>
+                    <button type="submit" className={s.button}>Sign Up</button>
+                
+                <div className={s.textGoto}>
+                  <p>Already have an account? <NavLink to="/login" className={classNames(s.link, s.linkGoto)}>Log in</NavLink></p>
+                </div>
 
-                    <button type="submit">Sign Up</button>
-                </form>
 
-                <p>Already have an account? <NavLink to="/">Log in</NavLink></p>
-            </div>
+                
+            </form>
     )}  
 }
 

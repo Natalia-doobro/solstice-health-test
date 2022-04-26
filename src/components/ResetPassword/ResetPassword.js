@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import shortid from "shortid";
+import { BiChevronLeft } from "react-icons/bi";
+import classNames from 'classnames';
+import s from '../../style/Form.module.scss'
 
 class ResetPassword extends Component {
     state = {
@@ -29,27 +32,33 @@ class ResetPassword extends Component {
         const { email } = this.state;
 
         return (
-            <div>
-                <h2>Reset password</h2>
-                <p>Password reset link will be sent to your email</p>
+            <form onSubmit={this.handleSubmit} className={s.container}>
+                <div className={s.containerTytle}>
+                   <NavLink to="/login" className={s.link}><BiChevronLeft className={s.iconReset}/></NavLink>
+                   <h1 className={s.tytleReset}>Reset password</h1>
+                </div>
+                
+                <p className={s.text}>Password reset link will be sent to your email</p>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor={this.emailInputId}>Email address</label>
+                <div className={s.containerInput} >
+                    <label htmlFor={this.emailInputId} className={s.label}>Email address</label>
                     <input
-                        type="email"
-                        name="email"
+                      type="email"
+                      name="email"
                         value={email}
                         placeholder="Email address"
                         id={this.emailInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
+                </div>
 
-                    <button type="submit">Send reset link</button>
-                </form>
+                <button type="submit" className={classNames(s.button, s.buttonReset)}>Send reset link</button>
+                
 
-                <NavLink to="/">Back to log in</NavLink>
-            </div>
+                <NavLink to="/login" className={classNames(s.link, s.linkReset)}>Back to log in</NavLink>
+            </form>
     )}  
 }
 

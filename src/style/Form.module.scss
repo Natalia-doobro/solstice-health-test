@@ -1,0 +1,230 @@
+/* form */
+.container{
+    font-family: Poppins,sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    width: 429px;
+    
+    padding: 37px 50px 48px;
+    border-radius: 25px;
+    background: hsla(0,0%,100%,.25);
+    box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+    color: #3c3e47;
+
+    @media screen and (max-width: 450px) {
+      width: 310px;
+    }
+    @media screen and (max-width: 1199px){
+      margin: 56px auto 166px auto;
+    }
+    @media screen and (min-width: 1200px) {
+      margin: 56px 166px 166px 150px;
+    }
+    @media screen and (min-width: 1400px) {
+        margin: 56px 166px 166px 326px;
+    }
+}
+
+.tytle{
+    font-weight: 500;
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.text{
+    margin-bottom: 16px;
+}
+
+.containerInput{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+.label{
+    margin-bottom: 5px;
+}
+.input{
+    align-items: center;
+    width: 327px;
+    height: 48px;
+    padding-left: 24px;
+    padding-right: 14px;
+
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #3c3e47;
+
+    @media screen and (max-width: 450px) {
+        width: 100%;
+    }
+}
+
+/* button Password */
+.inputPassword{
+    position: relative;
+}
+.btnHiddenPassword{
+    position: absolute;
+    right: 0px;
+    bottom: -2px;
+
+    width: 48px;
+    height: 48px;
+    
+    background: transparent;
+    border: none;
+}
+.iconPassword{
+    width: 20px;
+    height: 21px;
+    fill: rgb(60, 62, 71);
+    opacity: 0.5;
+}
+
+/* checkbox */
+.switchContaine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+
+    @media screen and (max-width: 450px) {
+        flex-direction: column;
+    }
+}
+
+.switch{
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 450px) {
+        margin-bottom: 20px;
+    }
+}
+.textSwitch{
+    margin-right: 15px;
+}
+
+.switchContainer{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    
+    direction: ltr;
+    touch-action: none;
+    user-select: none;
+
+    border-radius: 10px;
+    transition: opacity 0.25s ease 0s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+.switchBackground{
+    position: relative;
+    width: 38px;
+    height: 20px;
+    
+    margin: 0px;
+    border-radius: 10px;
+    background: rgb(136, 136, 136);
+    cursor: pointer;
+    transition: background 0.25s ease 0s;
+}
+
+.switchHandle{
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+
+    top: 1px;
+    height: 18px;
+    width: 18px;
+
+    outline: 0px;
+    border: 0px;
+    
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    
+    transform: translateX(1px);
+    transition: background-color 0.25s ease 0s, transform 0.25s ease 0s, box-shadow 0.15s ease 0s;
+}
+.switchBackgroundCheck{
+    position: relative;
+    width: 38px;
+    height: 20px;
+    
+    margin: 0px;
+    border-radius: 10px;
+    background: rgb(255, 199, 118);
+    cursor: pointer;
+    transition: background 0.25s ease 0s;
+}
+.switchHandleCheck{
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    
+    outline: 0px;
+    border: 0px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    transform: translateX(19px);
+    transition: background-color 0.25s ease 0s,
+    transform 0.25s ease 0s,
+    box-shadow 0.15s ease 0s;
+}
+
+
+
+.button{
+    font-weight: 300;
+    font-size: 13px;
+    
+    width: 100%;
+    height: 47px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 11px;
+    background: #3c3e47;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.link{
+    text-decoration: none;
+    color: #3c3e47;
+}
+.textGoto{
+    text-align: center;
+}
+
+.linkGoto{
+    font-weight: 500;
+}
+
+/* Reset password */
+.containerTytle{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.tytleReset{
+    font-weight: 500;
+    font-size: 32px;
+    margin-left: 5px;
+}
+.iconReset{
+    width: 26px;
+    height: 30px;
+}
+.buttonReset{
+    opacity: 1;
+}
+.linkReset{
+    display:block;
+    font-weight: 500;
+    text-align: center;
+}

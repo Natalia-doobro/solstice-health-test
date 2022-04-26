@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: center;
+    
+
+    margin: 31px auto;
+
+    background: hsla(0, 0%, 100%, .5);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgb(93 114 113 / 20%);
+
+
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      height: 180px;
+    }
+    @media screen and (min-width: 401px) and (max-width: 1199px){
+      width: 380px;
+      height: 69px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 520px;
+      height: 69px;
+    }
+ }
+
+

@@ -1,25 +1,31 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import shortid from "shortid";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
-
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import classNames from 'classnames';
+import s from '../../style/Form.module.scss'
 
 class LogIn extends Component {
     state = {
         email: "",
         password: "",
-        checkbox: false,
+        check: false,
     };
 
     emailInputId = shortid.generate();      
     passwordInputId = shortid.generate();
-    checkboxInputId = shortid.generate();
-
+    
     handleChange = (e) => {
         const { name, value } = e.currentTarget;
 
         this.setState({ [name]: value });
     };
+
+    toggleSwitch = () => {
+        this.setState(({check}) => ({
+            check: !check,
+        }));
+    }
 
     handleSubmit = (evt) => {
         evt.preventDefault();
@@ -34,53 +40,66 @@ class LogIn extends Component {
     };
 
     render() {
-        const { email, password, checkbox } = this.state;
+        const { email, password, check } = this.state;
 
         return (
-            <div>
-                <h2>Welcome</h2>
-                <p>Enter your email and password to log in</p>
+            <form onSubmit={this.handleSubmit} className={s.container}>
+                <h1 className={s.tytle}>Welcome</h1>
+                <p className={s.text}>Enter your email and password to log in</p>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor={this.emailInputId}>Email address</label>
+
+                <div className={s.containerInput}>
+                <label htmlFor={this.emailInputId}  className={s.label}>Email address</label>
                     <input
                         type="email"
                         name="email"
                         value={email}
                         placeholder="Email address"
                         id={this.emailInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
+                </div>
 
-                    <label htmlFor={this.passwordInputId}>Password</label>
+                <div className={classNames(s.containerInput, s.inputPassword)}>
+                <label htmlFor={this.passwordInputId} className={s.label}>Password</label>
                     <input
                         type="password"
                         name="password"
                         value={password}
                         placeholder="Password"
                         id={this.passwordInputId}
+                        className={s.input}
                         required
                         onChange={this.handleChange}
                     />
-                    <button><BsEye/><BsEyeSlash/></button>
+                     <button className={s.btnHiddenPassword}>
+                       <AiOutlineEye className={s.iconPassword}/>
+                        {/* <AiOutlineEyeInvisible className={s.iconPassword}/> */}
+                    </button>
+                </div>
+
                     
-                    <label htmlFor={this.checkboxInputId}>Remember me</label>
-                    <input
-                        type="checkbox"
-                        name="checkbox"
-                        value={checkbox}
-                        id={this.checkboxInputId}
-                        onChange={this.handleChange}
-                    />
+                <div className={s.switchContaine}>
+                    <div className={s.switch} onClick={() => this.toggleSwitch()}>
+                        <p className={s.textSwitch}>Remember me</p>
+                        <div className={s.switchContainer} > 
+                            <div className={!check ? s.switchBackground : s.switchBackgroundCheck}></div> 
+                            <div className={!check ? s.switchHandle : s.switchHandleCheck}></div>  
+                        </div> 
+                    </div> 
 
-                    <NavLink to="/">Reset password</NavLink>
+                        <NavLink to="/reset-password" className={s.link}>Reset password</NavLink>
+                    </div>
 
-                    <button type="submit">Log in</button>
-                </form>
+                <button type="submit" className={s.button}>Log in</button>
+                
+                <div className={s.textGoto}>
+                  <p>Don’t have an account? <NavLink to="/sign-up" className={classNames(s.link, s.linkGoto)}>Sign up</NavLink></p>
+                </div>
 
-                <p>Don’t have an account? <NavLink to="/">Sign up</NavLink></p>
-            </div>
+            </form>
     )}  
 }
 
