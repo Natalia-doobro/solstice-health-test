@@ -45,16 +45,17 @@ class ResetPassword extends Component {
                     <input
                       type="email"
                       name="email"
-                        value={email}
-                        placeholder="Email address"
-                        id={this.emailInputId}
-                        className={s.input}
-                        required
-                        onChange={this.handleChange}
+                      value={email}
+                      placeholder="Email address"
+                      id={this.emailInputId}
+                      className={s.input}
+                      required
+                      autoComplete="off"
+                      onChange={this.handleChange}
                     />
                 </div>
 
-                <button type="submit" className={classNames(s.button, s.buttonReset)}>Send reset link</button>
+                <button type="submit" className={classNames(s.button, s.buttonActive)}>Send reset link</button>
                 
 
                 <NavLink to="/login" className={classNames(s.link, s.linkReset)}>Back to log in</NavLink>

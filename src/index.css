@@ -29,7 +29,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: pink;
+  background: url(./images/bg-main.png), url(./images/waveBig.png),
+  url(./images/waveSmall.png), url(./images/bg-right.png);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  
+  
+}
+@media screen and (max-width: 499px) {
+  body {
+    background-position: -300px 300px, 100% 52px, 0px 100%, 100% 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 1199px) {
+  body {
+    background-position: 0px 300px, 100% 52px, 0px 100%, 100% 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background-position: 0px 0px, 100% 52px, 0px 100%, 100% 100%;
+  }
 }
 
 code {
@@ -37,9 +56,33 @@ code {
     monospace;
 }
 
+#root {
+  min-height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+:root {
+  --body-color: #ffffff;
+  --text-color: #adadad;
+  --header-bg-color: hsla(0, 0%, 100%, .5);
+  --form-bg-color: hsla(0, 0%, 100%, .25);
+  --form-text-color: #3c3e47;
+  --bg-color: #CCCCCC;
+  --input-bg-color: #ffffff;
+  --accent-color: #3c3e47;
+  --focus-color: rgb(248, 72, 72);
+  --icon-color: rgb(60, 62, 71);
+  --switch-bg-color:rgb(136, 136, 136);
+  --switch-handle-color:rgb(255, 255, 255);
+  --switch-bg-check-color:rgb(255, 199, 118);
+  --button-color: #ffffff;
+  --button-bg-color: #3c3e47;
 }

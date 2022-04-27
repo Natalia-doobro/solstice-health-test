@@ -1,10 +1,16 @@
 import React from 'react'
-import { lazy, Suspense } from "react";
-
-import { Route, Routes } from "react-router-dom";
+import {
+  lazy, 
+  Suspense, 
+  // useEffect 
+} from "react";
+// import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+// import authOperations from "./redux/auth/auth-operations";
+// import authSelectors from "./redux/auth/auth-selectors";
 import './App.css';
 
 const Ligin = lazy(() =>
@@ -18,20 +24,27 @@ const ResetPasswordPage = lazy(() =>
 );
 
 function App() {
+  // const dispatch = useDispatch();
+  // const isFetchingCurrentUser = useSelector(authSelectors.getIsCurrentUser);
+
+  // useEffect(() => {
+  //   dispatch(authOperations.refreshCurrentUser());
+  // }, [dispatch]);
+
   return (
-    <div className="App">
+    // !isFetchingCurrentUser && ()
       <Suspense fallback={<Loader/>}>
-      <Header/>
+        <Header/>
       
         <Routes>
-          <Route path="/login" element={<Ligin />} />
-          <Route path="/sign-up" element={<Signup />} />
-          <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route exact path="/" element={<Navigate to="/login" replace/>}/>
+          <Route path="/login" element={<Ligin/>} />
+          <Route path="/sign-up" element={<Signup/>} />
+          <Route path="/reset-password" element={<ResetPasswordPage/>} />
         </Routes>
        
-      <Footer/>
+        <Footer/>
       </Suspense> 
-    </div>
   );
 }
 

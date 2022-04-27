@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+// import { useDispatch } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import shortid from "shortid";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+// import authOperations from '../../redux/auth/auth-operations';
 import classNames from 'classnames';
 import s from '../../style/Form.module.scss'
 
@@ -10,6 +12,8 @@ class LogIn extends Component {
         email: "",
         password: "",
         check: false,
+        seePassword: false,
+        btnSubmit: false,
     };
 
     emailInputId = shortid.generate();      
@@ -17,8 +21,15 @@ class LogIn extends Component {
     
     handleChange = (e) => {
         const { name, value } = e.currentTarget;
+        const { email, password } = this.state;
 
         this.setState({ [name]: value });
+
+        if ((email !== '') && (password !== '')) {
+            this.setState({ btnSubmit: true });
+        } else {
+            this.setState({ btnSubmit: false });
+        }
     };
 
     toggleSwitch = () => {
@@ -26,13 +37,21 @@ class LogIn extends Component {
             check: !check,
         }));
     }
+    seeThePassword = () => {
+        this.setState(({seePassword}) => ({
+            seePassword: !seePassword,
+        }));
+    }
 
     handleSubmit = (evt) => {
         evt.preventDefault();
+        const { email, password, check} = this.state;
 
-        console.log(this.state)
+        // this.dispatch(authOperations.register({ email, password, check }));
+        console.log({email, password, check})
 
         this.reset();
+        this.setState({ btnSubmit: false });
     };
 
     reset = () => {
@@ -40,7 +59,7 @@ class LogIn extends Component {
     };
 
     render() {
-        const { email, password, check } = this.state;
+        const { email, password, check, seePassword, btnSubmit} = this.state;
 
         return (
             <form onSubmit={this.handleSubmit} className={s.container}>
@@ -51,13 +70,14 @@ class LogIn extends Component {
                 <div className={s.containerInput}>
                 <label htmlFor={this.emailInputId}  className={s.label}>Email address</label>
                     <input
-                        type="email"
-                        name="email"
+                      type="email"
+                      name="email"
                         value={email}
                         placeholder="Email address"
                         id={this.emailInputId}
                         className={s.input}
                         required
+                        autoComplete="off"
                         onChange={this.handleChange}
                     />
                 </div>
@@ -65,18 +85,23 @@ class LogIn extends Component {
                 <div className={classNames(s.containerInput, s.inputPassword)}>
                 <label htmlFor={this.passwordInputId} className={s.label}>Password</label>
                     <input
-                        type="password"
+                        type={!seePassword ? "password" : "text"}
                         name="password"
                         value={password}
                         placeholder="Password"
                         id={this.passwordInputId}
                         className={s.input}
+                        minLength="6"
+                        maxLength="15"
+                        size="15"
                         required
+                        autoComplete="current-password"
                         onChange={this.handleChange}
                     />
-                     <button className={s.btnHiddenPassword}>
-                       <AiOutlineEye className={s.iconPassword}/>
-                        {/* <AiOutlineEyeInvisible className={s.iconPassword}/> */}
+                  <button type="button" className={s.btnHiddenPassword} onClick={this.seeThePassword}>
+                        {!seePassword
+                            ? <AiOutlineEye className={s.iconPassword}/>
+                            : <AiOutlineEyeInvisible className={s.iconPassword} />}
                     </button>
                 </div>
 
@@ -93,7 +118,13 @@ class LogIn extends Component {
                         <NavLink to="/reset-password" className={s.link}>Reset password</NavLink>
                     </div>
 
-                <button type="submit" className={s.button}>Log in</button>
+                <button
+                    type="submit" 
+                    className={!btnSubmit ? s.button : classNames(s.button, s.buttonActive)}
+                    disabled={!btnSubmit} 
+                >
+                   Log in
+                </button>
                 
                 <div className={s.textGoto}>
                   <p>Don’t have an account? <NavLink to="/sign-up" className={classNames(s.link, s.linkGoto)}>Sign up</NavLink></p>

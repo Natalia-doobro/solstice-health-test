@@ -26,7 +26,7 @@
     font-family: Poppins,sans-serif;
     font-weight: 300;
     font-size: 13px;
-    color: #adadad;
+    color: var(--text-color);
 
     @media screen and (max-width: 955px) {
       margin-bottom: 20px;
@@ -57,5 +57,5 @@
     font-size: 13px;
     font-weight: 300;
     text-decoration: none;
-    color: #adadad;
+    color: var(--text-color);
 }
