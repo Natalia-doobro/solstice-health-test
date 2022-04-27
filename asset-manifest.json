@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/solstice-health-test/static/css/main.edcb0663.css",
+    "main.js": "/solstice-health-test/static/js/main.a9b95652.js",
+    "Ligin.css": "/solstice-health-test/static/css/Ligin.b8260163.chunk.css",
+    "Ligin.js": "/solstice-health-test/static/js/Ligin.cec25117.chunk.js",
+    "Signup.css": "/solstice-health-test/static/css/Signup.b8260163.chunk.css",
+    "Signup.js": "/solstice-health-test/static/js/Signup.bdba170f.chunk.js",
+    "ResetPasswordPage.css": "/solstice-health-test/static/css/ResetPasswordPage.b8260163.chunk.css",
+    "ResetPasswordPage.js": "/solstice-health-test/static/js/ResetPasswordPage.7dc23c24.chunk.js",
+    "static/js/610.9c8d8c4e.chunk.js": "/solstice-health-test/static/js/610.9c8d8c4e.chunk.js",
+    "static/media/bg-main.png": "/solstice-health-test/static/media/bg-main.dee6a424e3ee187bb026.png",
+    "static/media/bg-right.png": "/solstice-health-test/static/media/bg-right.7d9f64b96e26a537ed99.png",
+    "static/media/waveBig.png": "/solstice-health-test/static/media/waveBig.0265e5949b2209901b90.png",
+    "index.html": "/solstice-health-test/index.html",
+    "main.edcb0663.css.map": "/solstice-health-test/static/css/main.edcb0663.css.map",
+    "main.a9b95652.js.map": "/solstice-health-test/static/js/main.a9b95652.js.map",
+    "Ligin.b8260163.chunk.css.map": "/solstice-health-test/static/css/Ligin.b8260163.chunk.css.map",
+    "Ligin.cec25117.chunk.js.map": "/solstice-health-test/static/js/Ligin.cec25117.chunk.js.map",
+    "Signup.b8260163.chunk.css.map": "/solstice-health-test/static/css/Signup.b8260163.chunk.css.map",
+    "Signup.bdba170f.chunk.js.map": "/solstice-health-test/static/js/Signup.bdba170f.chunk.js.map",
+    "ResetPasswordPage.b8260163.chunk.css.map": "/solstice-health-test/static/css/ResetPasswordPage.b8260163.chunk.css.map",
+    "ResetPasswordPage.7dc23c24.chunk.js.map": "/solstice-health-test/static/js/ResetPasswordPage.7dc23c24.chunk.js.map",
+    "610.9c8d8c4e.chunk.js.map": "/solstice-health-test/static/js/610.9c8d8c4e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edcb0663.css",
+    "static/js/main.a9b95652.js"
+  ]
+}
