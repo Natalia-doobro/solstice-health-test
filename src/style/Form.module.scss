@@ -1,234 +1,232 @@
 /* form */
-.container{
-    font-family: Poppins,sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    width: 429px;
-    
-    padding: 37px 50px 48px;
-    border-radius: 25px;
-    background:var(--form-bg-color);
-    box-shadow: 0 0 50px rgb(0 0 0 / 10%);
-    color: var(--form-text-color);
+.container {
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  width: 429px;
 
-    @media screen and (max-width: 450px) {
-      width: 310px;
-    }
-    @media screen and (max-width: 1199px){
-      margin: 56px auto 166px auto;
-    }
-    @media screen and (min-width: 1200px) {
-       margin: 98px 166px 104px 326px;
-    }
-    @media screen and (min-width: 1400px) {
-        margin: 98px 166px 104px 326px;
-    }
+  padding: 37px 50px 48px;
+  border-radius: 25px;
+  background: var(--form-bg-color);
+  box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+  color: var(--form-text-color);
+
+  @media screen and (max-width: 450px) {
+    width: 310px;
+  }
+  @media screen and (max-width: 1199px) {
+    margin: 56px auto 166px auto;
+  }
+  @media screen and (min-width: 1200px) {
+    margin: 98px 166px 104px 326px;
+  }
+  @media screen and (min-width: 1400px) {
+    margin: 98px 166px 104px 326px;
+  }
 }
 
-.tytle{
-    font-weight: 500;
-    font-size: 32px;
-    margin-bottom: 16px;
+.tytle {
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 16px;
 }
-.text{
-    margin-bottom: 16px;
-}
-
-.containerInput{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-}
-.label{
-    margin-bottom: 5px;
-}
-.input{
-    align-items: center;
-    width: 327px;
-    height: 48px;
-    padding-left: 24px;
-    padding-right: 14px;
-
-    border: none;
-    border-radius: 8px;
-    background-color: var(--input-bg-color);
-    color: var(--form-text-color);
-
-    @media screen and (max-width: 450px) {
-        width: 100%;
-    }
+.text {
+  margin-bottom: 16px;
 }
 
-.ivalidInput{
-    color: var(--focus-color);
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.label {
+  margin-bottom: 5px;
+}
+.input {
+  align-items: center;
+  width: 327px;
+  height: 48px;
+  padding-left: 24px;
+  padding-right: 14px;
+
+  border: none;
+  border-radius: 8px;
+  background-color: var(--input-bg-color);
+  color: var(--form-text-color);
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+.ivalidInput {
+  color: var(--focus-color);
 }
 
 /* button Password */
-.inputPassword{
-    position: relative;
+.inputPassword {
+  position: relative;
 }
-.btnHiddenPassword{
-    position: absolute;
-    right: 0px;
-    bottom: -2px;
+.btnHiddenPassword {
+  position: absolute;
+  right: 0px;
+  bottom: -2px;
 
-    width: 48px;
-    height: 48px;
-    
-    background: transparent;
-    border: none;
+  width: 48px;
+  height: 48px;
+
+  background: transparent;
+  border: none;
 }
-.iconPassword{
-    width: 20px;
-    height: 21px;
-    fill: var(--icon-color);
-    opacity: 0.5;
+.iconPassword {
+  width: 20px;
+  height: 21px;
+  fill: var(--icon-color);
+  opacity: 0.5;
 }
 
 /* checkbox */
-.switchContaine{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 0;
+.switchContaine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
 
-    @media screen and (max-width: 450px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+  }
 }
 
-.switch{
-    display: flex;
-    align-items: center;
-    @media screen and (max-width: 450px) {
-        margin-bottom: 20px;
-    }
+.switch {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 20px;
+  }
 }
-.textSwitch{
-    margin-right: 15px;
-}
-
-.switchContainer{
-    position: relative;
-    display: inline-block;
-    text-align: left;
-    
-    direction: ltr;
-    touch-action: none;
-    user-select: none;
-
-    border-radius: 10px;
-    transition: opacity 0.25s ease 0s;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    opacity: 1;
-}
-.switchBackground{
-    position: relative;
-    width: 38px;
-    height: 20px;
-    
-    margin: 0px;
-    border-radius: 10px;
-    background: var(--switch-bg-color);
-    cursor: pointer;
-    transition: background 0.25s ease 0s;
+.textSwitch {
+  margin-right: 15px;
 }
 
-.switchHandle{
-    position: absolute;
-    display: inline-block;
-    cursor: pointer;
+.switchContainer {
+  position: relative;
+  display: inline-block;
+  text-align: left;
 
-    top: 1px;
-    height: 18px;
-    width: 18px;
+  direction: ltr;
+  touch-action: none;
+  user-select: none;
 
-    outline: 0px;
-    border: 0px;
-    
-    border-radius: 50%;
-    background: var(--switch-handle-color);
-    
-    transform: translateX(1px);
-    transition: background-color 0.25s ease 0s, transform 0.25s ease 0s, box-shadow 0.15s ease 0s;
+  border-radius: 10px;
+  transition: opacity 0.25s ease 0s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  opacity: 1;
 }
-.switchBackgroundCheck{
-    position: relative;
-    width: 38px;
-    height: 20px;
-    
-    margin: 0px;
-    border-radius: 10px;
-    background: var(--switch-bg-check-color);
-    cursor: pointer;
-    transition: background 0.25s ease 0s;
+.switchBackground {
+  position: relative;
+  width: 38px;
+  height: 20px;
+
+  margin: 0px;
+  border-radius: 10px;
+  background: var(--switch-bg-color);
+  cursor: pointer;
+  transition: background 0.25s ease 0s;
 }
-.switchHandleCheck{
-    position: absolute;
-    display: inline-block;
-    cursor: pointer;
-    top: 1px;
-    width: 18px;
-    height: 18px;
-    
-    outline: 0px;
-    border: 0px;
-    border-radius: 50%;
-    background: var(--switch-handle-color);
-    transform: translateX(19px);
-    transition: background-color 0.25s ease 0s,
-    transform 0.25s ease 0s,
+
+.switchHandle {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+
+  top: 1px;
+  height: 18px;
+  width: 18px;
+
+  outline: 0px;
+  border: 0px;
+
+  border-radius: 50%;
+  background: var(--switch-handle-color);
+
+  transform: translateX(1px);
+  transition: background-color 0.25s ease 0s, transform 0.25s ease 0s,
+    box-shadow 0.15s ease 0s;
+}
+.switchBackgroundCheck {
+  position: relative;
+  width: 38px;
+  height: 20px;
+
+  margin: 0px;
+  border-radius: 10px;
+  background: var(--switch-bg-check-color);
+  cursor: pointer;
+  transition: background 0.25s ease 0s;
+}
+.switchHandleCheck {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+
+  outline: 0px;
+  border: 0px;
+  border-radius: 50%;
+  background: var(--switch-handle-color);
+  transform: translateX(19px);
+  transition: background-color 0.25s ease 0s, transform 0.25s ease 0s,
     box-shadow 0.15s ease 0s;
 }
 
+.button {
+  font-weight: 300;
+  font-size: 13px;
 
-
-.button{
-    font-weight: 300;
-    font-size: 13px;
-    
-    width: 100%;
-    height: 47px;
-    margin-bottom: 30px;
-    border: none;
-    border-radius: 11px;
-    background: var(--button-bg-color);
-    color: var(--button-color);
-    opacity: 0.5;
+  width: 100%;
+  height: 47px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 11px;
+  background: var(--button-bg-color);
+  color: var(--button-color);
+  opacity: 0.5;
 }
-.buttonActive{
-    opacity: 1;
+.buttonActive {
+  opacity: 1;
 }
 
-.link{
-    text-decoration: none;
-    color: var(--form-text-color);
+.link {
+  text-decoration: none;
+  color: var(--form-text-color);
 }
-.textGoto{
-    text-align: center;
+.textGoto {
+  text-align: center;
 }
 
-.linkGoto{
-    font-weight: 500;
+.linkGoto {
+  font-weight: 500;
 }
 
 /* Reset password */
-.containerTytle{
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+.containerTytle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
 }
-.tytleReset{
-    font-weight: 500;
-    font-size: 32px;
-    margin-left: 5px;
+.tytleReset {
+  font-weight: 500;
+  font-size: 32px;
+  margin-left: 5px;
 }
-.iconReset{
-    width: 26px;
-    height: 30px;
+.iconReset {
+  width: 26px;
+  height: 30px;
 }
-.linkReset{
-    display:block;
-    font-weight: 500;
-    text-align: center;
+.linkReset {
+  display: block;
+  font-weight: 500;
+  text-align: center;
 }

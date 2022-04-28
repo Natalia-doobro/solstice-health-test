@@ -6,9 +6,8 @@
 
     background: var(--header-bg-color);
     border-radius: 15px;
-    box-shadow: 0 15px 25px rgb(93 114 113 / 20%);
-
-
+    box-shadow: 0 15px 25px rgba(93, 114, 113, 0.2);
+    
     @media screen and (max-width: 400px) {
       width: 200px;
       height: 180px;

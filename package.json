@@ -27,7 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "netlify": "netlify",
+    "predeploy": "npm run build",
+    "deploy": "npm run netlify deploy -p"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "eslint": "^8.14.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.0",
+    "netlify-cli": "^10.1.0",
     "prettier": "^2.6.2",
     "prop-types": "^15.8.1"
   },
